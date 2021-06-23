@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= post.title %></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body style="max-width: 600px;">
+        <small><a href="/">< Back to homepage</a></small>
+        <h1><%= post.title %></h1>
+        <%
+        const date = new Date(post.date * 1000)
+        const dateString = `${date.toLocaleDateString("en-US", { timeZone: 'America/New_York', year: "numeric", month: "long", day: "numeric" })} - ${date.toLocaleTimeString("en-us", { timeZone: 'America/New_York', timeZoneName: "short" ,hour: "2-digit" ,minute: "2-digit"})}`
+
+        const idBuff = new Buffer(post.post_id)
+        const postLink = `/post/${idBuff.toString("base64")}`
+        %>
+        <ul>
+            <li><b>Author:</b> <%= post.author %></li>
+            <li><b>Date:</b> <%= dateString %></li>
+        </ul>
+
+        <% for (const paragraph of paragraphs) { %>
+            <p><%= paragraph %></p>
+        <%}%>
+    </body>
+</html>

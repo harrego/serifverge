@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Verge: Serif Edition</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+        <center><h1>The Verge: Serif Edition</h1></center>
+        <hr>
+        <center><small>Stories from The Verge in basic HTML. Inspiration and layout from <a href="http://68k.news/">68k.news</a>.</small></center>
+        <%for (const post of posts) { %>
+        <%
+        const date = new Date(post.date * 1000)
+        const dateString = `${date.toLocaleDateString("en-US", { timeZone: 'America/New_York', year: "numeric", month: "long", day: "numeric" })} - ${date.toLocaleTimeString("en-us", { timeZone: 'America/New_York', timeZoneName: "short" ,hour: "2-digit" ,minute: "2-digit"})}`
+
+        const idBuff = new Buffer(post.post_id)
+        const postLink = `/post/${idBuff.toString("base64")}`
+        %>
+        <h3><font size="5"><a href="<%= postLink %>"><%= post.title %></a></font></h3>
+        <ul>
+            <li><b>Author:</b> <%= post.author %></li>
+            <li><b>Date:</b> <%= dateString %></li>
+        </ul>
+        <%}%>
+    </body>
+</html>

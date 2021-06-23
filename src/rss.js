@@ -33,7 +33,6 @@ export function fetchPosts(url) {
         })
 
         feedparser.on("end", function() {
-            console.log(posts)
             resolve(posts)
         })
 
