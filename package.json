@@ -1,0 +1,19 @@
+{
+  "name": "serifverge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Harry Stanton",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@mozilla/readability": "^0.4.1",
+    "bent": "^7.3.12",
+    "dompurify": "^2.2.9",
+    "feedparser": "^2.2.10",
+    "jsdom": "^16.6.0"
+  }
+}
