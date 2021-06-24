@@ -6,9 +6,9 @@
     </head>
 
     <body>
-        <center><h1>The Verge: Serif Edition</h1></center>
+        <center><h1><font color="#F7C626">T</font><font color="#F7B229">h</font><font color="#F69B2D">e</font> <font color="#F48037">V</font><font color="#F16746">e</font><font color="#ED465C">r</font><font color="#E8286F">g</font><font color="#E5127D">e</font><small> - Serif Edition</small></h1></center>
         <hr>
-        <center><small>Stories from The Verge in basic HTML. Inspiration and layout from <a href="http://68k.news/">68k.news</a>.</small></center>
+        <center><small>Stories from The Verge in basic HTML. Inspiration and layout from <a href="http://68k.news/">68k.news</a>. Source on <a href="https://www.github.com/harrego/serifverge">GitHub.</a></small></center>
         <%for (const post of posts) { %>
         <%
         const date = new Date(post.date * 1000)
@@ -23,5 +23,7 @@
             <li><b>Date:</b> <%= dateString %></li>
         </ul>
         <%}%>
+
+        <center><p><small>This website is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the The Verge, or any of its subsidiaries or its affiliates.</small></p></center>
     </body>
 </html>

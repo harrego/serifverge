@@ -7,6 +7,8 @@ export function fetchPosts(url) {
     return new Promise(async (resolve, reject) => {
         const feedparser = new FeedParser()
 
+        console.log(`[${(new Date()).toISOString()}][rss] started a fetch`)
+
         feedparser.on("error", function(err) {
             reject(err)
         })
@@ -33,6 +35,7 @@ export function fetchPosts(url) {
         })
 
         feedparser.on("end", function() {
+            console.log(`[${(new Date()).toISOString()}][rss] fetched ${posts.length} posts`)
             resolve(posts)
         })
 

@@ -4,7 +4,7 @@
         <title><%= post.title %></title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body style="max-width: 600px;">
+    <body>
         <small><a href="/">< Back to homepage</a></small>
         <h1><%= post.title %></h1>
         <%
@@ -17,10 +17,13 @@
         <ul>
             <li><b>Author:</b> <%= post.author %></li>
             <li><b>Date:</b> <%= dateString %></li>
+            <li><a href="<%= post.link %>">Original source</a></li>
         </ul>
 
         <% for (const paragraph of paragraphs) { %>
             <p><%= paragraph %></p>
         <%}%>
+
+        <center><p><small>This website is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the The Verge, or any of its subsidiaries or its affiliates.</small></p></center>
     </body>
 </html>
