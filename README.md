@@ -1,5 +1,5 @@
 # serifverge
-Basic web version of The Verge - [apps.harry.city/verge](http://apps.harry.city/verge)
+Basic web version of The Verge - [theverge.harry.city](http://theverge.harry.city)
 
 ## Disclaimer
 This website is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the The Verge, or any of its subsidiaries or its affiliates.
