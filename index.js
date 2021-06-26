@@ -3,7 +3,11 @@ import { fetchPosts, vergeRssURL } from "./src/rss.js"
 import { scrapePost } from "./src/scrape.js"
 import { router } from "./routes/index.js"
 
+import { fileURLToPath } from "url"
+import { dirname, join } from "path"
+
 import express from "express"
+import favicon from "serve-favicon"
 
 const app = express()
 
@@ -11,6 +15,9 @@ const db = configureDb()
 
 app.set("db", db)
 app.set("view engine", "ejs")
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
+app.use(favicon(join(__dirname, "favicon.ico")))
 app.use("/", router)
 
 const port = process.env.PORT || 3000
